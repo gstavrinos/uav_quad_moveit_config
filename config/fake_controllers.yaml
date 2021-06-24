@@ -1,0 +1,10 @@
+controller_list:
+  - name: fake_base_link_group_controller
+    type: $(arg execution_type)
+    joints:
+      - virtual_joint
+initial:  # Define initial robot poses.
+#  - group: base_link_group
+#    pose: home
+
+  []

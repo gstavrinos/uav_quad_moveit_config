@@ -1,7 +1,7 @@
 # Simulation settings for using moveit_sim_controllers
 moveit_sim_hw_interface:
-  joint_model_group: todo_group_name
-  joint_model_group_pose: todo_state_name
+  joint_model_group: base_link_group
+  joint_model_group_pose: base_link_group_state
 # Settings for ros_control_boilerplate control loop
 generic_hw_control_loop:
   loop_hz: 300
@@ -18,7 +18,9 @@ joint_state_controller:
   publish_rate: 50
 controller_list:
     - name: multi_dof_joint_trajectory_action
-      type: trajectory_msgs/MultiDofFollowJointTrajectory
+      #type: trajectory_msgs/MultiDofFollowJointTrajectory
+      action_ns: "follow_joint_trajectory"
+      type: FollowJointTrajectory
       default: true
       joints:
           - virtual_joint
